@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll App</title>
+    <link rel="stylesheet" href="./resources/styles.css">
+    <link rel="stylesheet" href="./resources/player.css">
+</head>
+<body>
+    <header>
+        <h1>Dice roll app</h1>
+    </header>
+    <main>
+        <section id="dice-roll">
+            <div class="player">
+                <p>player 1</p>
+                <img src="" alt="dice image"  id="player-1">
+            </div>
+            <div class="player">
+                <p>player 2</p>
+                <img src="" alt="dice image"  id="player-2">
+            </div>
+
+            <button class="roll-dice-btn" onclick="play()">Roll!</button>
+            <p id="winner-name" class="hidden">The winner is: <span></span></p>
+        </section>
+    </main>
+    <footer>
+        &copy; All rights reserved
+    </footer>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+</html>

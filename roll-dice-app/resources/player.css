@@ -1,0 +1,38 @@
+
+.player {
+    display: inline-block;
+}
+
+.player img {
+    width: 200px;
+    height: 200px;
+    image-rendering: pixelated;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* mobile phones in portait */
+@media (max-width: 576px) {
+    .player {
+        /* display: block; */
+    }
+}
+
+/* mobile phones in landscape and smaller tablets */
+@media (min-width: 576px) and (max-width: 768px) {
+
+}
+
+/* larger tablets and smaller laptops */
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+
+/* larger laptops and desktop displays */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+/* larger desktop displays */
+@media (min-width: 1200px) {
+
+}
