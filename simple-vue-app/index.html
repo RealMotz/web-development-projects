@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div id="shopping-list">
+        <!-- We can only evaluate one expression inside -->
+        <!-- <h1>{{header.toLocaleUpperCase()}}</h1> -->
+        <h1>{{header || 'Welcome'}}</h1>
+        <div class="add-item-form">
+            <input v-model="newItem" type="text" placeholder="Add an item">
+            <button
+                v-on:click="items.push({id: items.length + 1,label: newItem})"
+                class="btn btn-primary">
+                Save Item
+            </button>
+
+            <!-- checkbox -->
+            <label>
+                <input type="checkbox" v-model="newItemHighPriority"> High Priority
+            </label>
+        </div>
+
+        <!-- radio buttons -->
+        <!-- <label>
+            <input type="radio" v-model="newItemPriority" value="low">Low
+        </label>
+        <label>
+            <input type="radio" v-model="newItemPriority" value="high">High
+        </label> -->
+        <!-- select -->
+        <!-- <label>
+            Priority
+            <select v-model="newItemPriority">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+            </select>
+        </label> -->
+
+        <!-- <label><input type="checkbox" v-model="iceCreamFlavors" value="vanilla">Vanilla</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
+        <br>
+        {{newItem}} - {{newItemHighPriority}}
+         -->
+        <ul>
+            <li v-for="item in items" :key="item.id">{{item.label}}</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const shoppingList = Vue.createApp({
+            data() {
+                return {
+                    header: 'Shopping List App',
+                    newItem: '',
+                    newItemPriority: 'low',
+                    newItemHighPriority: false,
+                    iceCreamFlavors: [],
+                    items: [
+                        {id: 1, label: '10 party hats'},
+                        {id: 2, label: '20 cups'},
+                        {id: 3, label: '1 fork'}
+                    ]
+                }
+            }
+        })
+        .mount('#shopping-list');
+    </script>
+</body>
+</html>
