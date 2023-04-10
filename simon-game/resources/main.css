@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "slksrc";
+    src: url('../fonts/slkscr.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "slksrc";
+    font-size: 20px;
+    text-align: center;
+}
+
+main {
+    height: 100vh;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0 20px 20px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 0 20px 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.game-board {
+    width: 250px;
+}
+
+.game-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+}
