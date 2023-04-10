@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 1rem;
+}
+
+footer {
+    background-color: #EA5455;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #EA5455;
+    color: #fff;
+}
+
+.code {
+    font-family: monospace;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.red-bg,
+.red-bg div,
+.red-bg p,
+.red-bg h2 {
+    color: #EA5455;
+}
+
+.red-bg li {
+    border: 1px solid #EA5455;
+}
+
+.red-bg li:hover {
+    background-color: #EB5F50;
+    color: #fff;
+}
+
+.white-bg,
+.white-bg div,
+.white-bg p,
+.white-bg h2 {
+    color: #fff;
+}
+
+.white-bg li {
+    border: 1px solid #fff;
+}
+
+.white-bg li:hover{
+    background-color: #fff;
+    color: #EA5455;
+}
+
+.text-block {
+    text-align: center;
+    padding: 1rem;
+    width: 500px;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+.text-block h2 {
+    padding: 1rem;
+}
+
+.centered-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.content-block .content-item {
+    padding: 1rem;
+    /* width: 50%; */
+}
+
+.content-block .content-item p,
+.content-block .content-item h3 {
+    padding: 1rem 0;
+}
+
+.content-block .content-item li {
+    list-style: none;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.content-block .content-item li:hover {
+    cursor: pointer;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when hovering over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+#design-principles {
+    background-color: #F9F5EB;
+    color: #EB5F50;
+}
+
+#design-principles ul {
+    list-style: none;
+    padding: 1rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#design-principles li {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #fff;
+    border: 1px solid #EB5F50;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+#design-principles li:hover {
+    background-color: #d2d2d2;
+    border: 1px solid #d2d2d2;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+#design-principles span {
+    font-weight: bold;
+}
+
+#main-principles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#main-principles div {
+    height: 100px;
+    width: 100px;
+    border: 1px solid #EB5F50;
+    border-radius: 5px;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    color: #EB5F50;
+    transition: background-color 0.5s;
+}
+
+#main-principles a {
+    text-decoration: none;
+    color: #EB5F50;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-principles a:hover {
+    color: #fff;
+}
+
+#main-principles div:hover {
+    background-color: #EB5F50;
+    cursor: pointer;
+}
+
+#color-theory {
+    background-color: #EA5455;
+    color: #EB5F50;
+}
+
+#color-theory table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#color-theory table td {
+    padding: 1rem;
+    border: 1px solid #fff;
+    text-align: center;
+}
+
+#typography-theory {
+    background-color: #F9F5EB;
+    color: #EB5F50;
+    text-align: justify;
+}
+
+#typography-theory .content-block{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#typography-theory p {
+    text-align: justify;
+    width: auto;
+}
+
+#typography-types div {
+    width: calc(50% - 40px);
+    text-align: justify;
+}
+
+#typography-types div:first-child {
+    margin: 0 40px 0 0;
+}
+
+#typography-types div:nth-child(2) {
+    margin: auto 0 auto 40px;
+}
+
+#typography-types .code {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #EB5F50;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#serif .code {
+    margin-top: 18.5px;
+}
+
+#user-interface{
+    background-color: #EA5455;
+    color: #EB5F50;
+}
+
+.user-interface-item {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #fff;
+}
+
+.user-interface-item:last-child {
+    position: absolute;
+    z-index: 100;
+    width: 110px;
+    background-color: #EA5455;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#ui-psychology p {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#user-experience {
+    background-color: #F9F5EB;
+    color: #EB5F50;
+}
+
+.user-experience-item {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.user-experience-item:nth-child(odd) {
+    border: 1px solid #EA5455;
+}
+
+/* Colors */
+
+#red {
+    background-color: red;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#yellow {
+    background-color: rgba(255, 255, 0, 0.606);
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: rgba(0, 0, 255, 0.707);
+}
+
+#purple {
+    background-color: purple;
+}
+
+#pink {
+    background-color: rgba(255, 192, 203, 0.761);
+}
+
+#black {
+    background-color: black;
+}
+
+#white {
+    background-color: rgba(255, 255, 255, 0.727);
+    color: black;
+}
+
+#gray {
+    background-color: gray;
+}
