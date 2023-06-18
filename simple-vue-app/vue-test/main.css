@@ -1,0 +1,225 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Target only the input text tag */
+input[type="text"] {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin: 10px 0;
+  text-align: center;
+}
+
+#shopping-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 500px;
+    padding: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+}
+
+#shopping-list li {
+  margin: 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* li background changes based on index */
+#shopping-list li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+button {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* move .header button to the upper right corner */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cancel {
+  background-color: #f44336;
+  color: #fff;
+  border: 1px solid #f44336;
+}
+
+.btn-cancel:hover {
+  background-color: #f4433666;
+  color: #fff;
+  border: 1px solid #f4433666;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  border: 1px solid #4CAF50;
+}
+
+.btn-primary:hover {
+  background-color: #4CAF5066;
+  color: #fff;
+  border: 1px solid #4CAF5066;
+}
+
+.strikeout {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.priority {
+  color: #de751f;
+}
+
+
+  .plans {
+    padding: 0 40px;
+    margin-bottom: 40px
+  }
+
+  .plans .plan {
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease
+  }
+
+  .plans .plan,
+  .plans .plan>.weight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+  }
+
+  .plans .plan>.weight {
+    width: 20%;
+    font-size: 1.875rem;
+    font-weight: 500;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #7dacaf;
+    color: #136268;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    height: 100px
+  }
+
+  .plans .plan>.description {
+    width: 60%;
+    padding: 1rem
+  }
+
+  .plans .plan>.description .title {
+    color: #3d4852;
+    display: block;
+    font-weight: 700;
+    margin-bottom: .25rem
+  }
+
+  .plans .plan>.description .description {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #8795a1;
+    line-height: 1.5
+  }
+
+  .plans .plan>.price {
+    width: 20%;
+    color: #09848d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 1.5rem;
+    font-family: Crimson Text, serif;
+    font-weight: 600
+  }
+
+  .plans .plan>.price .dollar-sign {
+    font-size: 24px;
+    font-weight: 700
+  }
+
+  .plans .plan>.price .number {
+    font-size: 72px;
+    line-height: .5
+  }
+
+  .plans .active-plan,
+  .plans .plan:hover {
+    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08)
+  }
+
+  .plans .active-plan:after,
+  .plans .plan:hover:after {
+    border-width: 2px;
+    border-color: #7dacaf;
+    border-radius: .25rem;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+  }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div id="app">
+        <plan-list></plan-list>
+    </div>
+
+    <div id="shopping-list">
+        <!-- We can only evaluate one expression inside -->
+        <!-- <h1>{{header.toLocaleUpperCase()}}</h1> -->
+        <div class="header">
+            <h1>{{header || 'Welcome'}}</h1>
+            <button v-if="editing" @click="doEdit(false)" class="btn btn-cancel">Cancel</button>
+            <button v-else @click="doEdit(true)" class="btn btn-primary">Add Item</button>
+        </div>
+        <div v-if="editing" class="add-item-form">
+            <input
+                @keyup.enter="saveItem"
+                v-model="newItem" type="text" placeholder="Add an item">
+            <p>{{characterCount}}/200</p>
+            <button
+                v-bind:disabled="newItem.length === 0"
+                v-on:click="saveItem"
+                class="btn btn-primary">
+                Save Item
+            </button>
+
+            <!-- checkbox -->
+            <label>
+                <input type="checkbox" v-model="newItemHighPriority"> High Priority
+            </label>
+        </div>
+
+        <p v-if="items.length === 0">No items avaiable</p>
+        <a :href="newItem" target="_blank">Dynamic link</a>
+
+        <!-- radio buttons -->
+        <label>
+            <input type="radio" v-model="newItemPriority" value="low">Low
+        </label>
+        <label>
+            <input type="radio" v-model="newItemPriority" value="high">High
+        </label>
+        <!-- select -->
+        <label>
+            Priority
+            <select v-model="newItemPriority">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+            </select>
+        </label>
+
+        <br />
+
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="vanilla">Vanilla</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
+
+        <ul>
+            <li
+                :class="{ strikeout: item.purchased, priority: item.highPriority }"
+                @click="togglePurchase(item)"
+                v-for="item in reverseItems"
+                :key="item.id">{{item.label}}</li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script type="text/x-template" id="plan-template">
+        <div class="plan" :class="{'active-plan' : selected}" @click="select">
+          <div class="description">
+            <span class="title">
+              {{name}}
+            </span>
+          </div>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="plan-list-template">
+      <div class="plans">
+        <planItem
+          v-for="plan in plans"
+          :name="plan"
+          :selected="plan === selectedPlan"
+          v-on:select="selectPlan"
+        ></planItem>
+      </div>
+    </script>
+
+    <script>
+        const shoppingList = Vue.createApp({
+            data() {
+                return {
+                    header: 'Shopping List App',
+                    newItem: '',
+                    newItemPriority: 'low',
+                    newItemHighPriority: false,
+                    editing: false,
+                    iceCreamFlavors: [],
+                    items: [
+                        {id: 1, label: '10 party hats', purchased: true, highPriority: false},
+                        {id: 2, label: '20 cups', purchased: true, highPriority: false},
+                        {id: 3, label: '1 fork', purchased: false, highPriority: true}
+                    ]
+                }
+            },
+            computed: {
+                // computed properties are cached
+                // they are only re-evaluated when a dependency changes
+                // they are not reactive
+                characterCount() {
+                    return this.newItem.length;
+                },
+                reverseItems() {
+                    return [...this.items].reverse();
+                }
+            },
+            methods: {
+                saveItem() {
+                    this.items.push({id: this.items.length + 1,label: this.newItem, highPriority: this.newItemHighPriority})
+                    this.newItem = '';
+                    this.newItemHighPriority = false;
+                },
+                doEdit(editing) {
+                    this.editing = editing;
+                    this.newItem = '';
+                    this.newItemHighPriority = false;
+                },
+                togglePurchase(item) {
+                    item.purchased = !item.purchased;
+                }
+            }
+        })
+        .mount('#shopping-list');
+    </script>
+
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>

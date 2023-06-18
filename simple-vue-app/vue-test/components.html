@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>My App</h1>
+        <plan-list></plan-list>
+        <!-- <plan name="The Hacker"></plan>
+        <plan name="The Curious"></plan>
+        <plan name="The Addict"></plan> -->
+    </div>
+    <script type="text/x-template" id="plan-template">
+        <div class="plan">
+            {{ name }}
+        </div>
+    </script>
+    <script type="text/x-template" id="plan-list-template">
+        <plan v-for="plan in plans" :name="plan" :key="plan"></plan>
+    </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
