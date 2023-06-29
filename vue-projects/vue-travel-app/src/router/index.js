@@ -10,6 +10,7 @@ const routes = [
   {path: '/brazil', name: 'brazil',component: () => import('../views/Brazil.vue')},
   {path: '/jamaica', name: 'jamaica',component: () => import('../views/Jamaica.vue')},
   {path: '/panama', name: 'panama',component: () => import('../views/Panama.vue')},
+  {path: '/destination/:id', component: () => import('../views/DestinationShow.vue')},
   {
     path: '/about',
     name: 'about',
